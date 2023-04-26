@@ -37,7 +37,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static("public"));
 
-
+app.get('/', (req, res) => {
+    res.send('good')
+})
 app.post('/register-user', registerUser);
 
 app.post("/login-user", loginUser);
