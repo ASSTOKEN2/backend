@@ -14,12 +14,12 @@ dotenv.config({ path: path.join(__dirname, './config.env') })
 //     console.log("DB Connected Successfully")
 // }).catch((err) => {
 //     console.log("Mongo not enabled locally")
-mongoose.connect("mongodb+srv://okpani:pablo570@pablo.jdoepos.mongodb.net/test").then(() => {
-    console.log("DB Connected Successfully")
-}).catch((err) => {
-    console.log("No internet connection")
-    console.log(err)
-})
+// mongoose.connect("mongodb+srv://okpani:pablo570@pablo.jdoepos.mongodb.net/test").then(() => {
+//     console.log("DB Connected Successfully")
+// }).catch((err) => {
+//     console.log("No internet connection")
+//     console.log(err)
+// })
 //})
 
 
