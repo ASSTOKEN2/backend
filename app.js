@@ -12,7 +12,7 @@ dotenv.config({ path: path.join(__dirname, './config.env') })
 
 // mongoose.connect('mongodb://127.0.0.1:27017/myapp').then(() => {
 //     console.log("DB Connected Successfully")
-// }).catch((err) => {
+//}).catch((err) => {
 //     console.log("Mongo not enabled locally")
 // mongoose.connect("mongodb+srv://okpani:pablo570@pablo.jdoepos.mongodb.net/test").then(() => {
 //     console.log("DB Connected Successfully")
