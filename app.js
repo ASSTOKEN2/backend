@@ -10,21 +10,21 @@ const { editUser, index } = require("./IndexController")
 
 dotenv.config({ path: path.join(__dirname, './config.env') })
 
-mongoose.connect('mongodb://127.0.0.1:27017/myapp').then(() => {
+// mongoose.connect('mongodb://127.0.0.1:27017/myapp').then(() => {
+//     console.log("DB Connected Successfully")
+// }).catch((err) => {
+//     console.log("Mongo not enabled locally")
+mongoose.connect("mongodb+srv://okpani:pablo570@pablo.jdoepos.mongodb.net/test").then(() => {
     console.log("DB Connected Successfully")
 }).catch((err) => {
-    console.log("Mongo not enabled locally")
-    mongoose.connect("mongodb+srv://okpani:pablo570@pablo.jdoepos.mongodb.net/test").then(() => {
-        console.log("DB Connected Successfully")
-    }).catch((err) => {
-        console.log("No internet connection")
-        console.log(err)
-    })
+    console.log("No internet connection")
+    console.log(err)
 })
+//})
 
 
 var corsOptions = {
-    origin: ['http://localhost:3001', 'http://localhost:3000'],
+    origin: ['http://localhost:3001', 'http://localhost:3000', 'https://pablo-codes.github.io/client.github.io/'],
     credentials: true,
     optionSuccessStatus: 200
 };
