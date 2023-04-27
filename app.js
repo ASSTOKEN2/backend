@@ -24,7 +24,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/myapp').then(() => {
 
 
 var corsOptions = {
-    origin: 'https://pablo-codes.github.io/client.github.io/',
+    origin: 'https://pablo-codes.github.io',
     credentials: true,
     optionSuccessStatus: 200
 };
