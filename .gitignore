@@ -1,3 +1,6 @@
 /node_modules
 /package-lock.json
+<<<<<<< HEAD
 /invoice
+=======
+>>>>>>> fa5254c6ff19f249fba923b66915e68cee7cfa1b
