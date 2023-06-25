@@ -20,14 +20,14 @@ const registerUser = async (req, res) => {
         const oldUser = await user.findOne({ username: body.username });
         if (oldEmail) {
             const email = body.email
-            const error = email + 'is already in use'
-            res.send(error)
+            const error = `The email ${email} is already in use`
+            res.send({ error: error, status: "400" })
         }
 
         else if (oldUser) {
             const username = body.username
-            const error = username + 'is already in use'
-            res.send(error)
+            const error = `The username ${username} is already in use`
+            res.send({ error: error, status: "400" })
         }
 
         else {
@@ -95,7 +95,7 @@ const registerUser = async (req, res) => {
 
 
 
-                res.send(token)
+                res.send({ token: token, status: "200" })
                 console.log('user added')
             }
         }
@@ -164,14 +164,15 @@ const loginUser = async (req, res, next) => {
                     const Get = await user.findOne({ email: req.body.email })
 
 
-                    res.send(token)
+                    res.send({ token: token, status: "200" })
+
 
 
 
                 }
                 else {
                     const error = "invalid Password"
-                    res.send(error);
+                    res.send({ error: error, status: "400" });
                 }
             } else {
                 console.log("error")
@@ -180,11 +181,11 @@ const loginUser = async (req, res, next) => {
         }
         else {
             const error = "invalid user"
-            res.send(error);
+            res.send({ error: error, status: "400" });
         }
     } catch (error) {
 
-        res.send(error)
+        console.log(error)
     }
 
 }

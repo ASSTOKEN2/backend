@@ -5,7 +5,7 @@ const mongoose = require("mongoose")
 const cors = require('cors')
 const dotenv = require('dotenv')
 const { registerUser, loginUser, updateUser } = require("./LoginController")
-const { editUser, index } = require("./IndexController")
+const { editUser, index, createProperties } = require("./IndexController")
 
 
 dotenv.config({ path: path.join(__dirname, './config.env') })
@@ -24,7 +24,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/myapp').then(() => {
 
 
 var corsOptions = {
-    origin: 'https://asstoken2.github.io',
+    origin: ['https://asstoken2.github.io', 'http://localhost:3000'],
     credentials: true,
     optionSuccessStatus: 200
 };
@@ -43,6 +43,7 @@ app.get('/', (req, res) => {
 app.post('/register-user', registerUser);
 
 app.post("/login-user", loginUser);
+app.post("/createpro", createProperties);
 app.get("/index/:id", index);
 app.get("/edit-user/:id", editUser);
 app.put("/update-user/:id", updateUser);

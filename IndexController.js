@@ -1,4 +1,5 @@
 const user = require('./schema')
+const property = require('./PropertySchema')
 
 const index = async (req, res) => {
     try {
@@ -51,4 +52,29 @@ const editUser = async (req, res) => {
     }
 
 }
-module.exports = { editUser, index };
+const createProperties = async (req, res) => {
+    try {
+        const users = req.params.id
+        const { title, value, unit, available, address, image } = req.body.user
+        const topics = await user.findOne({ token: users })
+
+        await property.create({
+            userid: topics._id,
+            title: title,
+            value: value,
+            unit: unit,
+            available: available,
+            address: address,
+            image: req.body.url
+        })
+        res.send("done");
+
+
+    } catch (error) {
+        console.log(error)
+
+
+    }
+
+}
+module.exports = { editUser, index, createProperties };
