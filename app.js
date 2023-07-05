@@ -39,7 +39,7 @@ var corsOptions = {
 
 app.use(cors(corsOptions));
 
-app.use(express.json()); DS - C36 - 1936766762 - 1867
+app.use(express.json());
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static("public"));
