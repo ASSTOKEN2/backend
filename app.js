@@ -25,15 +25,11 @@ mongoose.connect('mongodb://127.0.0.1:27017/myapp').then(() => {
 
 
 
-var whitelist = ['https://asstoken2.github.io', 'http://localhost:3000']
+
 var corsOptions = {
-    origin: function (origin, callback) {
-        if (whitelist.indexOf(origin) !== -1) {
-            callback(null, true)
-        } else {
-            callback(new Error('Not allowed by CORS'))
-        }
-    },
+    origin: ['https://asstoken2.github.io', 'http://localhost:3000'],
+    credentials: true,
+    optionSuccessStatus: 200
 }
 //  Middlewares
 
