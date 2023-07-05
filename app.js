@@ -34,9 +34,6 @@ var corsOptions = {
             callback(new Error('Not allowed by CORS'))
         }
     },
-    credentials: true,
-    optionSuccessStatus: 200
-
 }
 //  Middlewares
 
@@ -47,7 +44,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static("public"));
 
 app.get('/', (req, res) => {
-    res.send('good')
+    res.send('changed')
 })
 app.post('/register-user', registerUser);
 
